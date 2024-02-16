@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class TextUpdater : MonoBehaviour
 {
-    public TextMeshProUGUI textMeshPro;
-    public TileMapChecker tileMapChecker;
+    public TextMeshProUGUI TextMeshPro;
 
     void Update()
     {
+        TextMeshPro.text = "";
         // Update the TextMeshPro text with the variable value
-        textMeshPro.text = "Gold: " + tileMapChecker.jak.ToString();
+        TextMeshPro.text += "Money: " + MainManager.Instance.MoneyToString(PlayerManager.Instance.Money) + "\n";
+        TextMeshPro.text += "Day:" + MainManager.Instance.Day.ToString() + "\n";
+        TextMeshPro.text += "hour:" + MainManager.Instance.Hour.ToString() + "\n"; ;
+        TextMeshPro.text += "Stamina: " + PlayerManager.Instance.MaxStamina.ToString() + "/" + PlayerManager.Instance.Stamina.ToString() + "\n";
     }
 }
