@@ -1,0 +1,4 @@
+repository "Trading Game@unity_PY5bRy8TcuMing@cloud"
+  path "/"
+    br "/main"
+    co "/main"
